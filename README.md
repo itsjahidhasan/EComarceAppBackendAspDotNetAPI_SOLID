@@ -2,8 +2,7 @@
 Members:
 **Md. Jahid Hasan,
 **Tahir Azad Khan,
-**Abdullah Fahad,
-**Redowan
+
 
 # Project Description:
 This will be a multivendor e-commerce website which will build with .net framework.This project has used SOLID design principles
