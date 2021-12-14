@@ -19,5 +19,8 @@ namespace DAL
         public string Product_Description { get; set; }
         public string Product_Stock { get; set; }
         public string Product_Price { get; set; }
+        public Nullable<int> ShopO_Id { get; set; }
+    
+        public virtual ShopOwner ShopOwner { get; set; }
     }
 }

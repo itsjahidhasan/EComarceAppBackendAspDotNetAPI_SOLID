@@ -19,6 +19,10 @@ namespace DAL
         {
             return new AdminRepo(db);
         }
+        public static IRepository<ShopOwner, int> ShopOwnerDataAccess()
+        {
+            return new ShopOwnerRepo(db);
+        }
 
     }
 }
