@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DataAccess
+    public class DataAccess
     {
         static EhutBazardbEntities db;
         static DataAccess()

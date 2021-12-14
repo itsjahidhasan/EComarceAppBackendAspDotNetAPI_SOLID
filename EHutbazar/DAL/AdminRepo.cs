@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class AdminRepo : IRepository<Admin, int>
+    public class AdminRepo : IRepository<Admin, int>
     {
         EhutBazardbEntities db;
         public AdminRepo(EhutBazardbEntities db)
