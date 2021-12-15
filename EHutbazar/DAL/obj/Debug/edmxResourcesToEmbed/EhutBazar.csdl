@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EhutBazardbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Admin_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Admin_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Admin_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Admin_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Admin_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Type" Type="Int32" Nullable="false" />
+    <Property Name="Admin_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Notices" Relationship="Self.FK_Notice_User_Admin" FromRole="Admin" ToRole="Notice" />
+  </EntityType>
+  <EntityType Name="Affiliator">
+    <Key>
+      <PropertyRef Name="Affiliate_Id" />
+    </Key>
+    <Property Name="Affiliate_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Affiliate_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Affiliate_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Affiliate_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Affiliate_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Affiliate_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Affiliate_UserType" Type="Int32" Nullable="false" />
+    <Property Name="Affiliate_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authorization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+    </Key>
+    <Property Name="Customer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notice">
+    <Key>
+      <PropertyRef Name="Notice_Id" />
+    </Key>
+    <Property Name="Notice_Id" Type="Int32" Nullable="false" />
+    <Property Name="Notice_Post" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Post_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_Notice_User_Admin" FromRole="Notice" ToRole="Admin" />
+  </EntityType>
+  <EntityType Name="Request_Shopowner">
+    <Key>
+      <PropertyRef Name="ShopO_Id" />
+    </Key>
+    <Property Name="ShopO_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopO_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Shopname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shop_Product">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Product_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Product_Stock" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Product_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Id" Type="Int32" />
+    <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Shop_Product_ShopOwner" FromRole="Shop_Product" ToRole="ShopOwner" />
+  </EntityType>
+  <EntityType Name="ShopOwner">
+    <Key>
+      <PropertyRef Name="ShopO_Id" />
+    </Key>
+    <Property Name="ShopO_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopO_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Shopname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShopO_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Type" Type="Int32" Nullable="false" />
+    <Property Name="User_Validation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Shop_Product" Relationship="Self.FK_Shop_Product_ShopOwner" FromRole="ShopOwner" ToRole="Shop_Product" />
+  </EntityType>
+  <Association Name="FK_Notice_User_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+    <End Role="Notice" Type="Self.Notice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="Notice">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shop_Product_ShopOwner">
+    <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="0..1" />
+    <End Role="Shop_Product" Type="Self.Shop_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopOwner">
+        <PropertyRef Name="ShopO_Id" />
+      </Principal>
+      <Dependent Role="Shop_Product">
+        <PropertyRef Name="ShopO_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EhutBazardbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Affiliators" EntityType="Self.Affiliator" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Notices" EntityType="Self.Notice" />
+    <EntitySet Name="Request_Shopowner" EntityType="Self.Request_Shopowner" />
+    <EntitySet Name="Shop_Product" EntityType="Self.Shop_Product" />
+    <EntitySet Name="ShopOwners" EntityType="Self.ShopOwner" />
+    <AssociationSet Name="FK_Notice_User_Admin" Association="Self.FK_Notice_User_Admin">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Notice" EntitySet="Notices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shop_Product_ShopOwner" Association="Self.FK_Shop_Product_ShopOwner">
+      <End Role="ShopOwner" EntitySet="ShopOwners" />
+      <End Role="Shop_Product" EntitySet="Shop_Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

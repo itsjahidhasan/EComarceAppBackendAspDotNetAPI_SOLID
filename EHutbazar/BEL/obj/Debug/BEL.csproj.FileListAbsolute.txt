@@ -1,0 +1,6 @@
+E:\University\ASP.NET\API Project\EHutbazar\BEL\bin\Debug\BEL.dll
+E:\University\ASP.NET\API Project\EHutbazar\BEL\bin\Debug\BEL.pdb
+E:\University\ASP.NET\API Project\EHutbazar\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+E:\University\ASP.NET\API Project\EHutbazar\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+E:\University\ASP.NET\API Project\EHutbazar\BEL\obj\Debug\BEL.dll
+E:\University\ASP.NET\API Project\EHutbazar\BEL\obj\Debug\BEL.pdb
