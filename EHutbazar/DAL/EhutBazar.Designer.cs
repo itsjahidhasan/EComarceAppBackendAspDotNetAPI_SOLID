@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\dot Net\Final Project\Ecomarce-project-asp.net-API-using-SOLID-Design-Principles\EHutbazar\DAL\EhutBazar.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\University\ASP.NET\API Project\EHutbazar\DAL\EhutBazar.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

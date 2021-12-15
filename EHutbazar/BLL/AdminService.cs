@@ -22,6 +22,54 @@ namespace BLL
             var data = mapper.Map<List<AdminModel>>(da.GetAll());
             return data;
         }
-        
+
+        public static AdminModel Get(int id)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Admin, AdminModel>();
+            });
+            var mapper = new Mapper(config);
+            var da = DataAccess.AdminDataAccess();
+            var data = mapper.Map<AdminModel>(da.Get(id));
+            return data;
+        }
+
+        public static void Insert(AdminModel admin)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Admin, AdminModel>();
+            });
+            var mapper = new Mapper(config);
+            var da = DataAccess.AdminDataAccess();
+            var upload = mapper.Map<AdminModel, Admin>(admin);
+            da.Insert(upload);
+
+        }
+
+        public static void Upadte(AdminModel admin)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Admin, AdminModel>();
+            });
+            var mapper = new Mapper(config);
+            var da = DataAccess.AdminDataAccess();
+            var upload = mapper.Map<AdminModel, Admin>(admin);
+            da.Upadte(upload);
+        }
+        public static void Delete(int id)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<Admin, AdminModel>();
+            });
+            var mapper = new Mapper(config);
+            var da = DataAccess.AdminDataAccess();
+            da.Delete(id);
+        }
+
+
     }
 }
