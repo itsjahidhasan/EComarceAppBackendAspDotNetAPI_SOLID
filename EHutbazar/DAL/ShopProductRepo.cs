@@ -28,7 +28,7 @@ namespace DAL
             throw new NotImplementedException();
         }
 
-        public void Upadte(Shop_Product entity)
+        public void Update(Shop_Product entity)
         {
             throw new NotImplementedException();
         }

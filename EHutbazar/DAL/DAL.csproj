@@ -55,9 +55,11 @@
     <Compile Include="Affiliator.cs">
       <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
+    <Compile Include="AffiliatorRepo.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerRepo.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="EhutBazar.Context.cs">
       <AutoGen>True</AutoGen>

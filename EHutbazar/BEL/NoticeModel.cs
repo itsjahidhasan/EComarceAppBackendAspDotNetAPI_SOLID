@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BEL
 {
-    class NoticeModel
+    public class NoticeModel
     {
         public int Notice_Id { get; set; }
         public string Notice_Post { get; set; }

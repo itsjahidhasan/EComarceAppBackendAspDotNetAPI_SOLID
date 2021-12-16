@@ -33,7 +33,7 @@ namespace DAL
             db.SaveChanges();
         }
 
-        public void Upadte(Admin entity)
+        public void Update(Admin entity)
         {
             var s = db.Admins.FirstOrDefault(en => en.Admin_Id == entity.Admin_Id);
             db.Entry(s).CurrentValues.SetValues(entity);

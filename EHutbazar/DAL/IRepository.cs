@@ -12,7 +12,7 @@ namespace DAL
         List<TEntity> GetAll();
         TEntity Get(ID id);
         void Insert(TEntity entity);
-        void Upadte(TEntity entity);
+        void Update(TEntity entity);
         void Delete(ID id);
     }
 }

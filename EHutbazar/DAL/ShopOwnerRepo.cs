@@ -33,7 +33,7 @@ namespace DAL
             db.SaveChanges();
         }
 
-        public void Upadte(ShopOwner entity)
+        public void Update(ShopOwner entity)
         {
             var s = db.ShopOwners.FirstOrDefault(en => en.ShopO_Id == entity.ShopO_Id);
             db.Entry(s).CurrentValues.SetValues(entity);

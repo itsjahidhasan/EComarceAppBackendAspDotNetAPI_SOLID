@@ -9,67 +9,65 @@ using AutoMapper;
 
 namespace BLL
 {
-    public class AdminService
+    public class NoticeService
     {
-        public static List<AdminModel> GetAll()
+        public static List<NoticeModel> GetAll()
         {
             var config = new MapperConfiguration(c =>
             {
-                c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<Notice, NoticeModel>();
             });
             var mapper = new Mapper(config);
-            var da = DataAccess.AdminDataAccess();
-            var data = mapper.Map<List<AdminModel>>(da.GetAll());
+            var da = DataAccess.NoticeDataAccess();
+            var data = mapper.Map<List<NoticeModel>>(da.GetAll());
             return data;
         }
 
-        public static AdminModel Get(int id)
+        public static NoticeModel Get(int id)
         {
             var config = new MapperConfiguration(c =>
             {
-                c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<Notice, NoticeModel>();
             });
             var mapper = new Mapper(config);
-            var da = DataAccess.AdminDataAccess();
-            var data = mapper.Map<AdminModel>(da.Get(id));
+            var da = DataAccess.NoticeDataAccess();
+            var data = mapper.Map<NoticeModel>(da.Get(id));
             return data;
         }
 
-        public static void Insert(AdminModel admin)
+        public static void Insert(NoticeModel notice)
         {
             var config = new MapperConfiguration(c =>
             {
-                c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<Notice, NoticeModel>();
             });
             var mapper = new Mapper(config);
-            var da = DataAccess.AdminDataAccess();
-            var upload = mapper.Map<AdminModel, Admin>(admin);
+            var da = DataAccess.NoticeDataAccess();
+            var upload = mapper.Map<NoticeModel, Notice>(notice);
             da.Insert(upload);
 
         }
 
-        public static void Upadte(AdminModel admin)
+        public static void Upadte(NoticeModel notice)
         {
             var config = new MapperConfiguration(c =>
             {
-                c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<Notice, NoticeModel>();
             });
             var mapper = new Mapper(config);
-            var da = DataAccess.AdminDataAccess();
-            var upload = mapper.Map<AdminModel, Admin>(admin);
+            var da = DataAccess.NoticeDataAccess();
+            var upload = mapper.Map<NoticeModel, Notice>(notice);
             da.Update(upload);
         }
         public static void Delete(int id)
         {
             var config = new MapperConfiguration(c =>
             {
-                c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<Notice, NoticeModel>();
             });
             var mapper = new Mapper(config);
-            var da = DataAccess.AdminDataAccess();
+            var da = DataAccess.NoticeDataAccess();
             da.Delete(id);
         }
-
-
     }
 }

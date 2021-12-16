@@ -8,29 +8,39 @@ namespace DAL
 {
     class NoticeRepo : IRepository<Notice, int>
     {
+        EhutBazardbEntities db;
+        public NoticeRepo(EhutBazardbEntities db)
+        {
+            this.db = db;
+        }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var s = db.Notices.FirstOrDefault(e => e.Admin_Id == id);
+            db.Notices.Remove(s);
+            db.SaveChanges();
         }
 
         public Notice Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Notices.FirstOrDefault(e => e.Notice_Id == id);
         }
 
         public List<Notice> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Notices.ToList();
         }
 
         public void Insert(Notice entity)
         {
-            throw new NotImplementedException();
+            db.Notices.Add(entity);
+            db.SaveChanges();
         }
 
-        public void Upadte(Notice entity)
+        public void Update(Notice entity)
         {
-            throw new NotImplementedException();
+            var s = db.Notices.FirstOrDefault(en => en.Notice_Id == entity.Notice_Id);
+            db.Entry(s).CurrentValues.SetValues(entity);
+            db.SaveChanges();
         }
     }
 }

@@ -12,20 +12,6 @@ namespace EHutbazar.Controllers
     public class AdminController : ApiController
     {
         // GET api/<controller>
-       
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        [Route("api/Admin/Get")]
-        [HttpGet]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         [Route("api/Admin/GetAll")]
         [HttpGet]
         public List<AdminModel> GetAll()
@@ -33,20 +19,40 @@ namespace EHutbazar.Controllers
             return AdminService.GetAll();
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+
+        // GET api/<controller>/5
+        [Route("api/Admin/Get/{id}")]
+        [HttpGet]
+        public AdminModel Get(int id)
         {
+            return AdminService.Get(id);
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        
+
+        // POST api/<controller>
+        [Route("api/Admin/Insert")]
+        [HttpPost]
+        public void Insert([FromBody] AdminModel admin)
         {
+            AdminService.Insert(admin);
+        }
+        
+
+        // PUT api/<controller>/5
+        [Route("api/Admin/Update")]
+        [HttpPut]
+        public void Update([FromBody] AdminModel admin)
+        {
+            AdminService.Upadte(admin);
         }
 
         // DELETE api/<controller>/5
-        [Route("api/Admin/Delete")]
+        [Route("api/Admin/Delete/{id}")]
+        [HttpDelete]
         public void Delete(int id)
         {
+            AdminService.Delete(id);
         }
     }
 }
