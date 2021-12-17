@@ -23,6 +23,10 @@ namespace DAL
         {
             return new ShopOwnerRepo(db);
         }
+        public static IRepository<Shop_Product, int> ShopProductDataAccess()
+        {
+            return new ShopProductRepo(db);
+        }
         public static IRepository<Affiliator, int> AffiliatorDataAccess()
         {
             return new AffiliatorRepo(db);

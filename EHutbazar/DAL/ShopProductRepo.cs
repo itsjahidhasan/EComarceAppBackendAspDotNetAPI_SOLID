@@ -8,29 +8,39 @@ namespace DAL
 {
     class ShopProductRepo : IRepository<Shop_Product, int>
     {
-        public void Delete(int id)
+        EhutBazardbEntities db;
+        public ShopProductRepo(EhutBazardbEntities db)
         {
-            throw new NotImplementedException();
+            this.db = db;
+        }
+       public void Delete(int id)
+        {
+            var s = db.Shop_Product.FirstOrDefault(e => e.ShopO_Id == id);
+            db.Shop_Product.Remove(s);
+            db.SaveChanges();
         }
 
         public Shop_Product Get(int id)
         {
-            throw new NotImplementedException();
+            return db.Shop_Product.FirstOrDefault(e => e.Product_Id == id);
         }
 
         public List<Shop_Product> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Shop_Product.ToList();
         }
 
         public void Insert(Shop_Product entity)
         {
-            throw new NotImplementedException();
+            db.Shop_Product.Add(entity);
+            db.SaveChanges();
         }
 
         public void Update(Shop_Product entity)
         {
-            throw new NotImplementedException();
+            var s = db.Shop_Product.FirstOrDefault(en => en.Product_Id == entity.Product_Id);
+            db.Entry(s).CurrentValues.SetValues(entity);
+            db.SaveChanges();
         }
     }
 }

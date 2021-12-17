@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BEL
 {
-    class ShopProductModel
+   public class ShopProductModel
     {
         public int Product_Id { get; set; }
         public string Product_Name { get; set; }
