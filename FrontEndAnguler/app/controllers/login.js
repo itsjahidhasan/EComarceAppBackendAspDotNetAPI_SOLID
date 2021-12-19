@@ -5,7 +5,7 @@ app.controller("login",function($scope,$http,$location){
       .then(function(resp){
           console.log(resp.data);
           localStorage.setItem("token",resp.data.AccessToken);
-          //$location.path("/products");
+          $location.path("/Admin/Home");
       },function(err){
           console.log(err);
       });
