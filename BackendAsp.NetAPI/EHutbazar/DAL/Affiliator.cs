@@ -14,11 +14,6 @@ namespace DAL
     
     public partial class Affiliator
     {
-        public Affiliator()
-        {
-            this.Tokens = new HashSet<Token>();
-        }
-    
         public int Affiliate_Id { get; set; }
         public string Affiliate_Name { get; set; }
         public string Affiliate_Username { get; set; }
@@ -28,7 +23,5 @@ namespace DAL
         public int Affiliate_UserType { get; set; }
         public string Affiliate_Code { get; set; }
         public string Authorization { get; set; }
-    
-        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

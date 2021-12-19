@@ -6,12 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
+using EHutbazar.Auth;
 
 namespace EHutbazar.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class AdminController : ApiController
     {
+        
         // GET api/<controller>
         [Route("api/Admin/GetAll")]
         [HttpGet]
@@ -28,8 +31,8 @@ namespace EHutbazar.Controllers
         {
             return AdminService.Get(id);
         }
-
         
+
 
         // POST api/<controller>
         [Route("api/Admin/Insert")]
@@ -57,36 +60,6 @@ namespace EHutbazar.Controllers
         }
 
 
-        [Route("api/Admin/Logout")]
-        [HttpGet]
-        public HttpResponseMessage Logout()
-        {
-            var token = Request.Headers.Authorization.ToString();
-            if (token != null)
-            {
-                var rs = AdminService.Logout(token);
-                if (rs)
-                {
-                    return Request.CreateResponse(HttpStatusCode.OK, "Sucess fully logged out");
-                }
-
-            }
-            return Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid token to logout");
-        }
-
-        [Route("api/Admin/Login")]
-        [HttpPost]
-        public HttpResponseMessage Login(AdminModel admin)
-        {
-
-            //call to service
-            var token = AdminService.Authenticate(admin);
-            if (token != null)
-            {
-
-                return Request.CreateResponse(HttpStatusCode.OK, token);
-            }
-            return Request.CreateResponse(HttpStatusCode.NotFound, "User not found");
-        }
+        
     }
 }

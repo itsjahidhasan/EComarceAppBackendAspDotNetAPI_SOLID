@@ -129,54 +129,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Token_Admin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admin">
-              <PropertyRef Name="Admin_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_Affiliator">
-          <End Role="Affiliator" Type="Self.Affiliator" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Affiliator">
-              <PropertyRef Name="Affiliate_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="Customer_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_ShopOwner">
-          <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShopOwner">
-              <PropertyRef Name="ShopO_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="EhutBazardbModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Affiliator" EntityType="Self.Affiliator" Schema="dbo" store:Type="Tables" />
@@ -193,22 +145,6 @@
           <AssociationSet Name="FK_Shop_Product_ShopOwner" Association="Self.FK_Shop_Product_ShopOwner">
             <End Role="ShopOwner" EntitySet="ShopOwner" />
             <End Role="Shop_Product" EntitySet="Shop_Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_Admin" Association="Self.FK_Token_Admin">
-            <End Role="Admin" EntitySet="Admin" />
-            <End Role="Token" EntitySet="Token" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_Affiliator" Association="Self.FK_Token_Affiliator">
-            <End Role="Affiliator" EntitySet="Affiliator" />
-            <End Role="Token" EntitySet="Token" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_Customer" Association="Self.FK_Token_Customer">
-            <End Role="Customer" EntitySet="Customer" />
-            <End Role="Token" EntitySet="Token" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_ShopOwner" Association="Self.FK_Token_ShopOwner">
-            <End Role="ShopOwner" EntitySet="ShopOwner" />
-            <End Role="Token" EntitySet="Token" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -229,7 +165,6 @@
           <Property Name="User_Type" Type="Int32" Nullable="false" />
           <Property Name="Admin_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Notices" Relationship="Self.FK_Notice_User_Admin" FromRole="Admin" ToRole="Notice" />
-          <NavigationProperty Name="Tokens" Relationship="Self.FK_Token_Admin" FromRole="Admin" ToRole="Token" />
         </EntityType>
         <EntityType Name="Affiliator">
           <Key>
@@ -244,7 +179,6 @@
           <Property Name="Affiliate_UserType" Type="Int32" Nullable="false" />
           <Property Name="Affiliate_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Authorization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Tokens" Relationship="Self.FK_Token_Affiliator" FromRole="Affiliator" ToRole="Token" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -258,7 +192,6 @@
           <Property Name="Customer_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Customer_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Customer_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Tokens" Relationship="Self.FK_Token_Customer" FromRole="Customer" ToRole="Token" />
         </EntityType>
         <EntityType Name="Notice">
           <Key>
@@ -311,7 +244,6 @@
           <Property Name="User_Type" Type="Int32" Nullable="false" />
           <Property Name="User_Validation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Shop_Product" Relationship="Self.FK_Shop_Product_ShopOwner" FromRole="ShopOwner" ToRole="Shop_Product" />
-          <NavigationProperty Name="Tokens" Relationship="Self.FK_Token_ShopOwner" FromRole="ShopOwner" ToRole="Token" />
         </EntityType>
         <EntityType Name="Token">
           <Key>
@@ -323,10 +255,6 @@
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpiredDate" Type="DateTime" Precision="3" />
           <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Admin" Relationship="Self.FK_Token_Admin" FromRole="Token" ToRole="Admin" />
-          <NavigationProperty Name="Affiliator" Relationship="Self.FK_Token_Affiliator" FromRole="Token" ToRole="Affiliator" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK_Token_Customer" FromRole="Token" ToRole="Customer" />
-          <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Token_ShopOwner" FromRole="Token" ToRole="ShopOwner" />
         </EntityType>
         <Association Name="FK_Notice_User_Admin">
           <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
@@ -340,42 +268,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Token_Admin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admin">
-              <PropertyRef Name="Admin_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_Affiliator">
-          <End Role="Affiliator" Type="Self.Affiliator" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Affiliator">
-              <PropertyRef Name="Affiliate_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="Customer_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Shop_Product_ShopOwner">
           <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="0..1" />
           <End Role="Shop_Product" Type="Self.Shop_Product" Multiplicity="*" />
@@ -385,18 +277,6 @@
             </Principal>
             <Dependent Role="Shop_Product">
               <PropertyRef Name="ShopO_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Token_ShopOwner">
-          <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="1" />
-          <End Role="Token" Type="Self.Token" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShopOwner">
-              <PropertyRef Name="ShopO_Id" />
-            </Principal>
-            <Dependent Role="Token">
-              <PropertyRef Name="User_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -413,25 +293,9 @@
             <End Role="Admin" EntitySet="Admins" />
             <End Role="Notice" EntitySet="Notices" />
           </AssociationSet>
-          <AssociationSet Name="FK_Token_Admin" Association="Self.FK_Token_Admin">
-            <End Role="Admin" EntitySet="Admins" />
-            <End Role="Token" EntitySet="Tokens" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_Affiliator" Association="Self.FK_Token_Affiliator">
-            <End Role="Affiliator" EntitySet="Affiliators" />
-            <End Role="Token" EntitySet="Tokens" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_Customer" Association="Self.FK_Token_Customer">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Token" EntitySet="Tokens" />
-          </AssociationSet>
           <AssociationSet Name="FK_Shop_Product_ShopOwner" Association="Self.FK_Shop_Product_ShopOwner">
             <End Role="ShopOwner" EntitySet="ShopOwners" />
             <End Role="Shop_Product" EntitySet="Shop_Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Token_ShopOwner" Association="Self.FK_Token_ShopOwner">
-            <End Role="ShopOwner" EntitySet="ShopOwners" />
-            <End Role="Token" EntitySet="Tokens" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

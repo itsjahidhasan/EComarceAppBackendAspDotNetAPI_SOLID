@@ -154,3 +154,6 @@ E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\DAL.
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\DAL.dll.config
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\EntityFramework.xml
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\obj\Debug\EHutbazarAPI.csproj.CopyComplete
+E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\System.Web.Cors.dll
+E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\System.Web.Http.Cors.dll
+E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\EHutbazar\bin\System.Web.Http.Cors.xml

@@ -17,7 +17,6 @@ namespace DAL
         public ShopOwner()
         {
             this.Shop_Product = new HashSet<Shop_Product>();
-            this.Tokens = new HashSet<Token>();
         }
     
         public int ShopO_Id { get; set; }
@@ -32,6 +31,5 @@ namespace DAL
         public string User_Validation { get; set; }
     
         public virtual ICollection<Shop_Product> Shop_Product { get; set; }
-        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

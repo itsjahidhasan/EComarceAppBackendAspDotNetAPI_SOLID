@@ -38,9 +38,11 @@ namespace BLL
 
         public static void Insert(AdminModel admin)
         {
+            
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Admin, AdminModel>();
+                c.CreateMap<AdminModel, Admin>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.AdminDataAccess();
@@ -71,38 +73,11 @@ namespace BLL
             da.Delete(id);
         }
 
-        public static TokenModel Authenticate(AdminModel admin)
-        {
-            var config = new MapperConfiguration(c =>
-            {
-                c.CreateMap<Admin, AdminModel>();
-                
-            });
-            var mapper = new Mapper(config);
-            var da = DataAccess.AuthDataAccess();
-            var data = mapper.Map<AdminModel, Admin>(admin);
-            var result = da.Authenticate(data);
-            //var token = Mapper.Map<TokenModel, Token>(result);
-            var token = new TokenModel();
-            if(result != null)
-            {
-                token.Id = result.Id;
-                token.User_Id = result.User_Id;
-                token.AccessToken = result.AccessToken;
-                token.UserType = result.UserType;
-            }
-            return token;
-        }
-        public static bool IsAuthenticated(string token)
-        {
-            var rs = DataAccess.AuthDataAccess().IsAuthenticated(token);
-            return rs;
+        //login
+        
 
-        }
-        public static bool Logout(string token)
-        {
-            return DataAccess.AuthDataAccess().Logout(token);
-        }
+
+        
 
 
     }

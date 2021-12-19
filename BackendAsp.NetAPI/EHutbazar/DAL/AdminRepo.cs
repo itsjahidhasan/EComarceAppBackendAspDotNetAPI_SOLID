@@ -45,10 +45,19 @@ namespace DAL
             db.Admins.Remove(s);
             db.SaveChanges();
         }
+        ///Login
+        public Admin Login(Admin entity)
+        {
+            var u = db.Admins.FirstOrDefault(en => en.Admin_Username == entity.Admin_Username && en.Admin_Password == entity.Admin_Password);
+            return u;
+        }
+
+
+
 
         public Token Authenticate(Admin entity)
         {
-            var u = db.Admins.FirstOrDefault(en => en.Admin_Username.Equals(entity.Admin_Username) && en.Admin_Password.Equals(entity.Admin_Password));
+            var u = db.Admins.FirstOrDefault(en => en.Admin_Username == entity.Admin_Username && en.Admin_Password == entity.Admin_Password);
             Token t = null;
             if (u != null) //authenticated
             {
@@ -64,6 +73,7 @@ namespace DAL
             }
             return t;
         }
+
 
         public bool IsAuthenticated(string token)
         {

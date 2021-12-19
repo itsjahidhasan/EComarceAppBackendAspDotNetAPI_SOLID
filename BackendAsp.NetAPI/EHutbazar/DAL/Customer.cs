@@ -14,11 +14,6 @@ namespace DAL
     
     public partial class Customer
     {
-        public Customer()
-        {
-            this.Tokens = new HashSet<Token>();
-        }
-    
         public int Customer_Id { get; set; }
         public string Customer_Username { get; set; }
         public string Customer_Password { get; set; }
@@ -27,7 +22,5 @@ namespace DAL
         public string Customer_Phone { get; set; }
         public string Customer_Email { get; set; }
         public string Customer_Gender { get; set; }
-    
-        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

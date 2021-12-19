@@ -14,5 +14,6 @@ namespace DAL
         void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(ID id);
+        
     }
 }

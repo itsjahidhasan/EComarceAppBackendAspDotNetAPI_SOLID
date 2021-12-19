@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AdminService.cs" />
     <Compile Include="AffiliatorService.cs" />
+    <Compile Include="AuthService.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="NoticeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

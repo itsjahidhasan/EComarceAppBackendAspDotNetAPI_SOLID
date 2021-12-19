@@ -20,10 +20,5 @@ namespace DAL
         public System.DateTime CreateDate { get; set; }
         public Nullable<System.DateTime> ExpiredDate { get; set; }
         public string UserType { get; set; }
-    
-        public virtual Admin Admin { get; set; }
-        public virtual Affiliator Affiliator { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual ShopOwner ShopOwner { get; set; }
     }
 }

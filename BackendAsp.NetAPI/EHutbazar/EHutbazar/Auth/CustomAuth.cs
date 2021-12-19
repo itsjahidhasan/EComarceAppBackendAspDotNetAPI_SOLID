@@ -21,7 +21,7 @@ namespace EHutbazar.Auth
             }
             else
             {
-                if (AdminService.IsAuthenticated(authheader.ToString()))
+                if (AuthService.IsAuthenticated(authheader.ToString()))
                 {
                 }
                 else

@@ -4,21 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4f5cf1da1e59475eba3aeb9277d25226" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="EhutBazardbModel.Admin" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Affiliator" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Customer" Width="1.5" PointX="9" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Notice" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Request_Shopowner" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Shop_Product" Width="1.5" PointX="9.125" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.ShopOwner" Width="1.5" PointX="6.375" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EhutBazardbModel.Token" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
+      <Diagram DiagramId="62af0baa2ba14ebda413cf4264971254" Name="Diagram1">
+        <EntityTypeShape EntityType="EhutBazardbModel.Admin" Width="1.5" PointX="2.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Affiliator" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Customer" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Notice" Width="1.5" PointX="5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Request_Shopowner" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Shop_Product" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.ShopOwner" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EhutBazardbModel.Token" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="EhutBazardbModel.FK_Notice_User_Admin" ManuallyRouted="false" />
-        <AssociationConnector Association="EhutBazardbModel.FK_Token_Admin" ManuallyRouted="false" />
-        <AssociationConnector Association="EhutBazardbModel.FK_Token_Affiliator" ManuallyRouted="false" />
-        <AssociationConnector Association="EhutBazardbModel.FK_Token_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="EhutBazardbModel.FK_Shop_Product_ShopOwner" ManuallyRouted="false" />
-        <AssociationConnector Association="EhutBazardbModel.FK_Token_ShopOwner" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

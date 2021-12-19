@@ -17,7 +17,6 @@ namespace DAL
         public Admin()
         {
             this.Notices = new HashSet<Notice>();
-            this.Tokens = new HashSet<Token>();
         }
     
         public int Admin_Id { get; set; }
@@ -30,6 +29,5 @@ namespace DAL
         public string Admin_Type { get; set; }
     
         public virtual ICollection<Notice> Notices { get; set; }
-        public virtual ICollection<Token> Tokens { get; set; }
     }
 }

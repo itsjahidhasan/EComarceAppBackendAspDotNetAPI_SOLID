@@ -19,6 +19,7 @@ namespace DAL
         {
             return new AdminRepo(db);
         }
+        
         public static IRepository<ShopOwner, int> ShopOwnerDataAccess()
         {
             return new ShopOwnerRepo(db);
@@ -46,6 +47,10 @@ namespace DAL
         public static IAuth<Admin, string> AuthDataAccess()
         {
             return new AdminRepo(db);
+        }
+        public static IAuth<ShopOwner, string> AuthShopOwnerDataAccess()
+        {
+            return new ShopOwnerRepo(db);
         }
     }
 }
