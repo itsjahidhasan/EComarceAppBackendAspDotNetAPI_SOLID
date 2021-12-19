@@ -2,7 +2,8 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider){
 
   $routeProvider
-  .when("/",{
+  // Admin route
+  .when("/Admin",{
     templateUrl:"views/pages/admin/login.html",
     controller:'login'
   })
@@ -10,4 +11,8 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     templateUrl:"views/pages/admin/home.html",
     // controller:''
   })
+
+
+
+  // Shop owner route
 }]);
