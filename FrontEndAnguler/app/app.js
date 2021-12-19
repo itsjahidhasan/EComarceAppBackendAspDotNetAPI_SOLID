@@ -15,4 +15,17 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
 
   // Shop owner route
+  .when("/shopowner",{
+    templateUrl:"views/pages/shopowner/index.html",
+    controller:'shopownerlogin'
+    
+  })
+  .when("/",{
+
+    templateUrl:"views/index.html",
+
+    // controller:''
+
+  })
+
 }]);

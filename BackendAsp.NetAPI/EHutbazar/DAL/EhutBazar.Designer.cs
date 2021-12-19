@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\DAL\EhutBazar.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\ehutbazar.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
