@@ -15,7 +15,7 @@ namespace DAL
         }
         public void Delete(int id)
         {
-            var s = db.Notices.FirstOrDefault(e => e.Admin_Id == id);
+            var s = db.Notices.FirstOrDefault(e => e.Notice_Id == id);
             db.Notices.Remove(s);
             db.SaveChanges();
         }

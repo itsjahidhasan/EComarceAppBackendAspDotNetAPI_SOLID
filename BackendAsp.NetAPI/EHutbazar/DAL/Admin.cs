@@ -14,11 +14,6 @@ namespace DAL
     
     public partial class Admin
     {
-        public Admin()
-        {
-            this.Notices = new HashSet<Notice>();
-        }
-    
         public int Admin_Id { get; set; }
         public string Admin_Name { get; set; }
         public string Admin_Username { get; set; }
@@ -27,7 +22,5 @@ namespace DAL
         public string Admin_Phone { get; set; }
         public int User_Type { get; set; }
         public string Admin_Type { get; set; }
-    
-        public virtual ICollection<Notice> Notices { get; set; }
     }
 }

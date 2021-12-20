@@ -18,13 +18,3 @@ E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.dll
 E:\University\ASP.NET\API Project\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.pdb
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\bin\Debug\DAL.dll.config
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\bin\Debug\DAL.dll
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\bin\Debug\DAL.pdb
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\bin\Debug\EntityFramework.dll
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\bin\Debug\EntityFramework.xml
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.dll
-C:\Users\LENOVO\Desktop\New folder\BackendAsp.NetAPI\BackendAsp.NetAPI\EHutbazar\DAL\obj\Debug\DAL.pdb

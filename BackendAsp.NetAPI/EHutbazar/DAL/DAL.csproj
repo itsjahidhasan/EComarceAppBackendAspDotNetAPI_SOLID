@@ -49,64 +49,64 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="AdminRepo.cs" />
     <Compile Include="Affiliator.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="AffiliatorRepo.cs" />
     <Compile Include="Customer.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="DataAccess.cs" />
-    <Compile Include="ehutbazar.Context.cs">
+    <Compile Include="EhutBazar.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ehutbazar.Context.tt</DependentUpon>
+      <DependentUpon>EhutBazar.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ehutbazar.cs">
+    <Compile Include="EhutBazar.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
-    <Compile Include="ehutbazar.Designer.cs">
+    <Compile Include="EhutBazar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ehutbazar.edmx</DependentUpon>
+      <DependentUpon>EhutBazar.edmx</DependentUpon>
     </Compile>
     <Compile Include="IAuth.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Notice.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="NoticeRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request_Shopowner.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="ShopOwner.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="ShopOwnerRepo.cs" />
     <Compile Include="ShopProductRepo.cs" />
     <Compile Include="Shop_Product.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="Token.cs">
-      <DependentUpon>ehutbazar.tt</DependentUpon>
+      <DependentUpon>EhutBazar.tt</DependentUpon>
     </Compile>
     <Compile Include="TokenRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="ehutbazar.edmx">
+    <EntityDeploy Include="EhutBazar.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ehutbazar.Designer.cs</LastGenOutput>
+      <LastGenOutput>EhutBazar.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ehutbazar.edmx.diagram">
-      <DependentUpon>ehutbazar.edmx</DependentUpon>
+    <None Include="EhutBazar.edmx.diagram">
+      <DependentUpon>EhutBazar.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -114,15 +114,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ehutbazar.Context.tt">
+    <Content Include="EhutBazar.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ehutbazar.edmx</DependentUpon>
-      <LastGenOutput>ehutbazar.Context.cs</LastGenOutput>
+      <DependentUpon>EhutBazar.edmx</DependentUpon>
+      <LastGenOutput>EhutBazar.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ehutbazar.tt">
+    <Content Include="EhutBazar.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ehutbazar.edmx</DependentUpon>
-      <LastGenOutput>ehutbazar.cs</LastGenOutput>
+      <DependentUpon>EhutBazar.edmx</DependentUpon>
+      <LastGenOutput>EhutBazar.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

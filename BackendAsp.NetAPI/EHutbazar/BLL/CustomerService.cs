@@ -40,6 +40,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Customer, CustomerModel>();
+                c.CreateMap<CustomerModel, Customer>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.CustomerDataAccess();
@@ -53,6 +54,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Customer, CustomerModel>();
+                c.CreateMap<CustomerModel, Customer>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.CustomerDataAccess();
@@ -64,6 +66,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Customer, CustomerModel>();
+
             });
             var mapper = new Mapper(config);
             var da = DataAccess.CustomerDataAccess();

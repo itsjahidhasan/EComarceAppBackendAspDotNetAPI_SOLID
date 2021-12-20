@@ -49,9 +49,9 @@
           <Key>
             <PropertyRef Name="Notice_Id" />
           </Key>
-          <Property Name="Notice_Id" Type="int" Nullable="false" />
+          <Property Name="Notice_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Notice_Post" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Post_Date" Type="date" Nullable="false" />
+          <Property Name="Post_Date" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Admin_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Request_Shopowner">
@@ -105,30 +105,6 @@
           <Property Name="ExpiredDate" Type="datetime" />
           <Property Name="UserType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Notice_User_Admin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-          <End Role="Notice" Type="Self.Notice" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admin">
-              <PropertyRef Name="Admin_Id" />
-            </Principal>
-            <Dependent Role="Notice">
-              <PropertyRef Name="Admin_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Shop_Product_ShopOwner">
-          <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="0..1" />
-          <End Role="Shop_Product" Type="Self.Shop_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShopOwner">
-              <PropertyRef Name="ShopO_Id" />
-            </Principal>
-            <Dependent Role="Shop_Product">
-              <PropertyRef Name="ShopO_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="EhutBazardbModelStoreContainer">
           <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Affiliator" EntityType="Self.Affiliator" Schema="dbo" store:Type="Tables" />
@@ -138,14 +114,6 @@
           <EntitySet Name="Shop_Product" EntityType="Self.Shop_Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShopOwner" EntityType="Self.ShopOwner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Notice_User_Admin" Association="Self.FK_Notice_User_Admin">
-            <End Role="Admin" EntitySet="Admin" />
-            <End Role="Notice" EntitySet="Notice" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Shop_Product_ShopOwner" Association="Self.FK_Shop_Product_ShopOwner">
-            <End Role="ShopOwner" EntitySet="ShopOwner" />
-            <End Role="Shop_Product" EntitySet="Shop_Product" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -164,7 +132,6 @@
           <Property Name="Admin_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Type" Type="Int32" Nullable="false" />
           <Property Name="Admin_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Notices" Relationship="Self.FK_Notice_User_Admin" FromRole="Admin" ToRole="Notice" />
         </EntityType>
         <EntityType Name="Affiliator">
           <Key>
@@ -197,11 +164,10 @@
           <Key>
             <PropertyRef Name="Notice_Id" />
           </Key>
-          <Property Name="Notice_Id" Type="Int32" Nullable="false" />
+          <Property Name="Notice_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Notice_Post" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Post_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Post_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Admin_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Admin" Relationship="Self.FK_Notice_User_Admin" FromRole="Notice" ToRole="Admin" />
         </EntityType>
         <EntityType Name="Request_Shopowner">
           <Key>
@@ -227,7 +193,6 @@
           <Property Name="Product_Stock" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Product_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ShopO_Id" Type="Int32" />
-          <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Shop_Product_ShopOwner" FromRole="Shop_Product" ToRole="ShopOwner" />
         </EntityType>
         <EntityType Name="ShopOwner">
           <Key>
@@ -243,7 +208,6 @@
           <Property Name="ShopO_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Type" Type="Int32" Nullable="false" />
           <Property Name="User_Validation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Shop_Product" Relationship="Self.FK_Shop_Product_ShopOwner" FromRole="ShopOwner" ToRole="Shop_Product" />
         </EntityType>
         <EntityType Name="Token">
           <Key>
@@ -256,30 +220,6 @@
           <Property Name="ExpiredDate" Type="DateTime" Precision="3" />
           <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Notice_User_Admin">
-          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
-          <End Role="Notice" Type="Self.Notice" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Admin">
-              <PropertyRef Name="Admin_Id" />
-            </Principal>
-            <Dependent Role="Notice">
-              <PropertyRef Name="Admin_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Shop_Product_ShopOwner">
-          <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="0..1" />
-          <End Role="Shop_Product" Type="Self.Shop_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShopOwner">
-              <PropertyRef Name="ShopO_Id" />
-            </Principal>
-            <Dependent Role="Shop_Product">
-              <PropertyRef Name="ShopO_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="EhutBazardbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Affiliators" EntityType="Self.Affiliator" />
@@ -289,14 +229,6 @@
           <EntitySet Name="Shop_Product" EntityType="Self.Shop_Product" />
           <EntitySet Name="ShopOwners" EntityType="Self.ShopOwner" />
           <EntitySet Name="Tokens" EntityType="Self.Token" />
-          <AssociationSet Name="FK_Notice_User_Admin" Association="Self.FK_Notice_User_Admin">
-            <End Role="Admin" EntitySet="Admins" />
-            <End Role="Notice" EntitySet="Notices" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Shop_Product_ShopOwner" Association="Self.FK_Shop_Product_ShopOwner">
-            <End Role="ShopOwner" EntitySet="ShopOwners" />
-            <End Role="Shop_Product" EntitySet="Shop_Product" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>

@@ -16,6 +16,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Notice, NoticeModel>();
+                c.CreateMap<NoticeModel, Notice>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.NoticeDataAccess();
@@ -28,6 +29,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Notice, NoticeModel>();
+                c.CreateMap<NoticeModel, Notice>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.NoticeDataAccess();
@@ -40,6 +42,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Notice, NoticeModel>();
+                c.CreateMap<NoticeModel, Notice>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.NoticeDataAccess();
@@ -53,6 +56,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Notice, NoticeModel>();
+                c.CreateMap<NoticeModel, Notice>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.NoticeDataAccess();
@@ -64,6 +68,7 @@ namespace BLL
             var config = new MapperConfiguration(c =>
             {
                 c.CreateMap<Notice, NoticeModel>();
+                c.CreateMap<NoticeModel, Notice>();
             });
             var mapper = new Mapper(config);
             var da = DataAccess.NoticeDataAccess();
